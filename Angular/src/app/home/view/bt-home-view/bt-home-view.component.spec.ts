@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BtHomeViewComponent } from './bt-home-view.component';
+import { BtVMenuComponent } from 'src/app/common/components/bt-v-menu/bt-v-menu.component';
+import { BtHMenuComponent } from 'src/app/common/components/bt-h-menu/bt-h-menu.component';
+import { BtLoginComponent } from 'src/app/common/components/bt-login/bt-login.component';
 
 describe('BtHomeViewComponent', () => {
   let component: BtHomeViewComponent;
@@ -8,7 +11,12 @@ describe('BtHomeViewComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BtHomeViewComponent ]
+      declarations: [ 
+        BtHomeViewComponent,
+        BtVMenuComponent,
+        BtHMenuComponent,
+        BtLoginComponent
+      ]
     })
     .compileComponents();
   }));
