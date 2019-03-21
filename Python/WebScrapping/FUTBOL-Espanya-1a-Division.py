@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 import requests
 from bs4 import BeautifulSoup
+import pandas as pd
 
-### Permite conectarnos después a la API sin que nos de error.
-url = "https://www.bet365.es/#/AC/B1/C1/D13/E38119368/F2/"
+# Permite conectarnos después a la API sin que nos de error.
+url = 'https://www.bet365.es/#/AC/B1/C1/D13/E38119368/F2/'
 response = requests.get(url)
 
 ### Hace la llamada para conseguir los datos que nos interesan
@@ -29,6 +30,9 @@ output = []
 counter = 0
 odd = 4
 
+### Variables para agrupar índices deportes/partidos
+resultado = {'ID': [], 'Partido': [], 'Hora': [],'Web': [], '1': [], 'X': [],'2': []}
+
 
 ### Separa toda la información recivida en diferentes arrays separándolas por '|'
 for i in soup.text.split('|'):
@@ -49,10 +53,10 @@ for i in soup.text.split('|'):
 			### Si el elemento contiene información del partido lo guarda
 			if(array[4] == ''):
 				organized = ['','','','','','','']
-				organized[0] = array[0]
-				organized[1] = array[1]
-				organized[2] = array[2][6:8]+'/'+array[2][4:6]+'/'+array[2][:4]+' '+array[2][8:10]+':'+array[2][10:12]
-				organized[3] = array[3]
+				organized[0] = array[0].encode('utf-8')
+				organized[1] = array[1].encode('utf-8')
+				organized[2] = array[2][6:8].encode('utf-8')+'/'+array[2][4:6].encode('utf-8')+'/'+array[2][:4].encode('utf-8')+' '+array[2][8:10].encode('utf-8')+':'+array[2][10:12].encode('utf-8')
+				organized[3] = array[3].encode('utf-8')
 				output.append(organized)
 			### Si el elemento contiene información ODD las guarda en su posición
 			else:        
@@ -61,6 +65,26 @@ for i in soup.text.split('|'):
 				if(counter >= len(output)):
 					counter = 0
 					odd +=1
+                   
+
+#Mediante los datos extraidos los guardamos con sus índices respectivos
+for i in output:
+
+    resultado['ID'].append(str(i[0]))
+    resultado['Partido'].append(str(i[1]))
+    resultado['Hora'].append((i[2]))
+    resultado['Web'].append((i[3]))
+    resultado['1'].append(i[4])
+    resultado['X'].append(i[5])
+    resultado['2'].append(i[6])
+    #print(i)
+
+        
 
 
-print(output)
+print(resultado)
+#Para guardar en un csv se supone que deveria guardarlo en columnas pero no lo hace correctamente
+df = pd.DataFrame(resultado)
+#para ordenar los indices que tampoco lo hace correctamente
+index=['ID','Partido','Hora','Web','1','X','2']
+df.to_csv('output.csv',index=index,sep=":")
