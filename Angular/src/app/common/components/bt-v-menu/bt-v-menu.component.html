@@ -1,3 +1,9 @@
-<p>
-  bt-v-menu works!
-</p>
+<div class="v-menu">
+  <div class="v-menu__logo">
+    LOGO
+  </div>
+  <div *ngFor="let sport of sports">
+    <bt-v-menu-item [item]="sport"></bt-v-menu-item>
+  </div>
+
+</div>

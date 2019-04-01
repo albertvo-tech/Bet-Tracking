@@ -1,0 +1,19 @@
+.v-menu {
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 1;
+    height: 100%;
+    width: 208px;
+    background-color: #545454;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+
+    &__logo{
+        background: blue;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
