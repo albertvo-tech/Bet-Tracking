@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BtHMenuComponent } from './bt-h-menu.component';
+import { BtHMenuItemComponent } from '../bt-h-menu-item/bt-h-menu-item.component';
 
 describe('BtHMenuComponent', () => {
   let component: BtHMenuComponent;
@@ -8,7 +9,10 @@ describe('BtHMenuComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BtHMenuComponent ]
+      declarations: [ 
+        BtHMenuComponent,
+        BtHMenuItemComponent
+      ]
     })
     .compileComponents();
   }));

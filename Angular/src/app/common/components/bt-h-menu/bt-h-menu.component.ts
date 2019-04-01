@@ -8,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class BtHMenuComponent implements OnInit {
 
   constructor() { }
-
+  categories = [
+    'Notificar cuota',
+    'Verificación',
+    'Comparar cuotas'
+  ];
   ngOnInit() {
   }
 

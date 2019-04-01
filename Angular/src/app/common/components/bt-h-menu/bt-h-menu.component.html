@@ -1,3 +1,7 @@
 <div class="h-menu">
-    Hola
+    <div class="categories_container">
+        <div *ngFor="let category of categories">
+            <bt-h-menu-item [item]="category"></bt-h-menu-item>
+        </div>
+    </div>
 </div>

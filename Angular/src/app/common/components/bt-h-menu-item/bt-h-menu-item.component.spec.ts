@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BtVMenuItemComponent } from './bt-v-menu-item.component';
+import { BtHMenuItemComponent } from './bt-h-menu-item.component';
 
-describe('BtVMenuItemComponent', () => {
-  let component: BtVMenuItemComponent;
-  let fixture: ComponentFixture<BtVMenuItemComponent>;
+describe('BtHMenuItemComponent', () => {
+  let component: BtHMenuItemComponent;
+  let fixture: ComponentFixture<BtHMenuItemComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BtVMenuItemComponent ]
+      declarations: [ BtHMenuItemComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BtVMenuItemComponent);
+    fixture = TestBed.createComponent(BtHMenuItemComponent);
     component = fixture.componentInstance;
     component.item = {
       'name':'Test'

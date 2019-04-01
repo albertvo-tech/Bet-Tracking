@@ -4,6 +4,8 @@ import { BtHomeViewComponent } from './bt-home-view.component';
 import { BtVMenuComponent } from 'src/app/common/components/bt-v-menu/bt-v-menu.component';
 import { BtHMenuComponent } from 'src/app/common/components/bt-h-menu/bt-h-menu.component';
 import { BtLoginComponent } from 'src/app/common/components/bt-login/bt-login.component';
+import { BtVMenuItemComponent } from 'src/app/common/components/bt-v-menu-item/bt-v-menu-item.component';
+import { BtHMenuItemComponent } from 'src/app/common/components/bt-h-menu-item/bt-h-menu-item.component';
 
 describe('BtHomeViewComponent', () => {
   let component: BtHomeViewComponent;
@@ -15,7 +17,9 @@ describe('BtHomeViewComponent', () => {
         BtHomeViewComponent,
         BtVMenuComponent,
         BtHMenuComponent,
-        BtLoginComponent
+        BtLoginComponent,
+        BtVMenuItemComponent,
+        BtHMenuItemComponent
       ]
     })
     .compileComponents();
