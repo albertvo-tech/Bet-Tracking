@@ -5,6 +5,8 @@ import { BtHMenuComponent } from './components/bt-h-menu/bt-h-menu.component';
 import { BtLoginComponent } from './components/bt-login/bt-login.component';
 import { BtVMenuItemComponent } from './components/bt-v-menu-item/bt-v-menu-item.component';
 import { BtHMenuItemComponent } from './components/bt-h-menu-item/bt-h-menu-item.component';
+import { BtInputComponent } from './components/bt-input/bt-input.component';
+import { BtButtonComponent } from './components/bt-button/bt-button.component';
 
 @NgModule({
   declarations: [
@@ -12,7 +14,9 @@ import { BtHMenuItemComponent } from './components/bt-h-menu-item/bt-h-menu-item
     BtHMenuComponent, 
     BtLoginComponent,
     BtVMenuItemComponent,
-    BtHMenuItemComponent
+    BtHMenuItemComponent,
+    BtInputComponent,
+    BtButtonComponent
   ],
   imports: [
     CommonModule
@@ -21,7 +25,9 @@ import { BtHMenuItemComponent } from './components/bt-h-menu-item/bt-h-menu-item
     BtVMenuComponent, 
     BtHMenuComponent,
     BtLoginComponent,
-    BtVMenuItemComponent
+    BtVMenuItemComponent,
+    BtInputComponent,
+    BtButtonComponent
 
   ]
 })
