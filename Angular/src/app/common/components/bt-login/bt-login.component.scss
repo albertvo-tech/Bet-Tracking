@@ -1,0 +1,107 @@
+
+  /*Contenedor principal */
+  .login-container{
+    display:inline-flex;
+    position:relative;
+    justify-content: center;
+    margin-top: 0px;
+
+  }
+  /*Div imagen*/
+  .login-icon{
+    display:block;
+    margin: 10px 0px 0px 0px;
+    width: 48px;
+    height:80px;
+    margin: 0px 0px 0 0px;
+  }
+
+  /*Class image*/
+  .login-image{
+    display:block;
+    margin: 10px 0px 0px 10px;
+    width: 34px;
+    height:50px;
+  }
+
+  /*Div caja inputs*/
+  .login-input{
+    margin: 10px 0px 0px 0px;
+    width: 145px;
+    height:80px;
+    display:block;
+
+
+    }
+  /*class text*/
+  .text{
+
+    display:block;
+    width: 145px;
+    height:25px;
+    text-align: center;
+    font-family: 'Arial';
+    background-color: #545454;
+    font-size: 14px;
+    color:#EFECEB ;
+
+  }
+  /*class href*/
+  .login-href{
+    margin: 1px 0px 0px 0px;
+    display:block;
+    width: 145px;
+    height:25px;
+    text-align: auto;
+    font-family: 'Arial';
+    font-size: 11px;
+    color:#545454 ;
+  }
+  /*Div botones*/
+  .login-button{
+    width: 72px;
+    height:80px;
+    margin: 0px 0px 0px 10px;
+    display:block;
+
+
+      }
+  /*Class botton entrar*/
+  .button-entrar{
+    margin: 10px 0px 0px 0px;
+    display:block;
+    left:180px;
+    width: 77px;
+    height:30px;
+      text-align: center;
+      font-family: 'Arial';
+      background-color: #818181;
+      font-size: 14px;
+      color:#EFECEB ;
+  }
+  /*Class botton registrar*/
+  .button-registrar{
+    margin: 1px 0px 0px 0px;
+    display:block;
+    width: 86px;
+    height:30px;
+    text-align: center;
+        font-family: 'Arial';
+        background-color: #818181;
+        font-size: 14px;
+        color:#EFECEB ;
+  }
+  /*Div botton entrar*/
+  .login-button-entrar{
+    display:block;
+
+
+  }
+  /*Div botton entrar*/
+  .login-button-registrar{
+    display:block;
+
+
+    }
+
+
