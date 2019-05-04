@@ -1,7 +1,7 @@
-<div class="menu__logo">
-  <img class="menu__logo__size" src="assets/icon/logo.png" (click)="toggleCollapse()">
-</div>
 <div *ngIf="show" id="menu">
+  <div class="menu__logo">
+    <img class="menu__logo__size" src="assets/icon/logo.png" (click)="toggleCollapse()">
+  </div>
   <ul class="menu">
     <li class="has-sub" *ngFor="let sport of sports">
       <a>{{sport.name | uppercase}}</a>
@@ -18,4 +18,7 @@
       </ul>
     </li>
   </ul>
+</div>
+<div *ngIf="!show" class="menu__logo"> 
+  <img class="menu__logo__size" src="assets/icon/logo_toggle.png" (click)="toggleCollapse()">
 </div>
