@@ -9,6 +9,7 @@ export class BtVMenuComponent implements OnInit {
 
   constructor() { }
   sports: Array<any>;
+  show: boolean = true;
 
   ngOnInit() {
     this.sports = [{
@@ -63,6 +64,12 @@ export class BtVMenuComponent implements OnInit {
         }]
     }];
     //USING https://icons8.com/icons/
+  }
+
+  toggleCollapse() {
+    console.log("Before " + this.show);
+    this.show = !this.show;
+    console.log("After " + this.show);
   }
 
 }

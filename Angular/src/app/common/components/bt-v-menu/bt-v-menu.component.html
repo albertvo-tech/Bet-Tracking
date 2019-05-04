@@ -1,8 +1,8 @@
-<div id="menu">
-  <div class="logo">
-    LOGO
-  </div>
-  <ul>
+<div class="menu__logo">
+  <img class="menu__logo__size" src="assets/icon/logo.png" (click)="toggleCollapse()">
+</div>
+<div *ngIf="show" id="menu">
+  <ul class="menu">
     <li class="has-sub" *ngFor="let sport of sports">
       <a>{{sport.name | uppercase}}</a>
       <img src="{{sport.icon}}">

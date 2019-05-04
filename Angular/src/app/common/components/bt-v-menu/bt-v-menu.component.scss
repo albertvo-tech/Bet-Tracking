@@ -1,5 +1,31 @@
+.menu {
+    &__show {
+        display: none;
+    }
+
+    &__logo {
+        //background-color: #545454;
+        background-color: #EFECEB;
+        top: 0;
+        left: 0;
+        position: fixed;
+        z-index: 1;
+        height: 100px;
+        width: 208px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        &__size{
+            height: 35px;
+        width: auto;
+        }
+    }
+} 
+
 #menu {
-    top: 0;
+    margin-top: 100px;
     left: 0;
     position: fixed;
     z-index: 1;
@@ -11,14 +37,6 @@
     border: 0; 
 }
 
-.logo {
-    background: blue;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
- 
 #menu ul, li {
     
     list-style: none;
