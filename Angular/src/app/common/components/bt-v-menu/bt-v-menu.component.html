@@ -1,9 +1,21 @@
-<div class="v-menu">
-  <div class="v-menu__logo">
+<div id="menu">
+  <div class="logo">
     LOGO
   </div>
-  <div *ngFor="let sport of sports">
-    <bt-v-menu-item [item]="sport"></bt-v-menu-item>
-  </div>
-
+  <ul>
+    <li class="has-sub" *ngFor="let sport of sports">
+      <a>{{sport.name | uppercase}}</a>
+      <img src="{{sport.icon}}">
+      <ul *ngIf="sport.leagues.length != 0">
+        <li class="has-sub" *ngFor="let league of sport.leagues">
+          <a>{{league.name}}</a>
+          <ul *ngIf="league.matchs.length != 0">
+            <li *ngFor="let match of league.matchs">
+              <a>{{match.name}}</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
 </div>

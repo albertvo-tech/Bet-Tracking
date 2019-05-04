@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BtHomeBodyComponent } from './bt-home-body.component';
+import { BtBoxHomeComponent } from './bt-box-home.component';
 
-describe('BtHomeBodyComponent', () => {
-  let component: BtHomeBodyComponent;
-  let fixture: ComponentFixture<BtHomeBodyComponent>;
+describe('BtBoxHomeComponent', () => {
+  let component: BtBoxHomeComponent;
+  let fixture: ComponentFixture<BtBoxHomeComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BtHomeBodyComponent ]
+      declarations: [ BtBoxHomeComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BtHomeBodyComponent);
+    fixture = TestBed.createComponent(BtBoxHomeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

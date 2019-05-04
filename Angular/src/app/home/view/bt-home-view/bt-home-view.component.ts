@@ -8,20 +8,27 @@ import { Component, OnInit } from '@angular/core';
 export class BtHomeViewComponent implements OnInit {
 
   constructor() { }
-  sports = [{
-    'name': 'Fútbol',
-    'icon': 'https://img.icons8.com/metro/20/000000/football2.png'
-  },
-  { 
-    'name': 'Baloncesto',
-    'icon': 'https://img.icons8.com/ios/20/000000/basketball-filled.png'
-  },
-  {
-    'name': 'Tenis',
-    'icon': 'https://img.icons8.com/ios/20/000000/tennis-ball.png'
-  }]
-  //USING https://icons8.com/icons/
+  data: any;
   ngOnInit() {
+    this.data = [
+      {
+        'title': 'Notificar cuota',
+        'desc': 'Texto a concretar en el que se hará una breve explicación de en que consiste exactamente esta funcionalidad.'
+      },
+      {
+        'title': 'Verificación',
+        'desc': 'Texto a concretar en el que se hará una breve explicación de en que consiste exactamente esta funcionalidad.'
+      },
+      {
+        'title': '¿Quien somos?',
+        'desc': 'Esta aplicación web esta destinada para aportar una ayuda a quien la necesite para obtener información sobre' + 
+                ' la fluctuación de cuotas de los eventos deportivos. Aquí podeis encontrar tres funcionalidades básicas que esperemos que os sirvan de ayuda.'
+      },
+      {
+        'title': 'Comparar cuotas',
+        'desc': 'Texto a concretar en el que se hará una breve explicación de en que consiste exactamente esta funcionalidad.'
+      }
+    ]
   }
 
 }

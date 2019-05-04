@@ -1,3 +1,13 @@
-<bt-v-menu [sports]="sports"></bt-v-menu>
-<bt-h-menu></bt-h-menu>
-<bt-home-body></bt-home-body>
+<div class="container-fluid">
+    <div class="home-body">
+        <div class="home-body__left">
+            <bt-box-home [typeBox]="'text'" [data]="data[0]"></bt-box-home>
+            <bt-box-home [typeBox]="'text'" [data]="data[2]"></bt-box-home>
+        </div>
+        <div class="home-body__right">
+            <bt-box-home [typeBox]="'text'" [data]="data[0]"></bt-box-home>
+            <bt-box-home [typeBox]="'text'" [data]="data[1]"></bt-box-home>
+            <bt-box-home [typeBox]="'text'" [data]="data[3]"></bt-box-home>
+        </div>
+    </div>
+</div>

@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BtHomeViewComponent } from './view/bt-home-view/bt-home-view.component';
 import { BTCommonModule } from '../common/common.module';
-import { BtHomeBodyComponent } from './components/bt-home-body/bt-home-body.component';
+import { BtBoxHomeComponent } from './components/bt-box-home/bt-box-home.component';
 
 @NgModule({
   declarations: [
-    BtHomeViewComponent, 
-    BtHomeBodyComponent
+    BtHomeViewComponent,
+    BtBoxHomeComponent
   ],
   imports: [
     CommonModule,
