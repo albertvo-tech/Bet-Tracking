@@ -1,0 +1,22 @@
+<div class="home">
+    <div class="home-body">
+        <div class="home-body__left">
+            <bt-box-graphic [typeBox]="'number'" [data]="data[0]"></bt-box-graphic>
+            <div class="cajita">
+                <p>SELECCIONAR MERCADO</p> 
+            </div>
+            <div class="horizontal">
+                <bt-box-market id="izquierda" [typeBox]="'text'" [data]="data[4]"></bt-box-market>
+                <bt-box-market id="central" [typeBox]="'text'" [data]="data[5]"></bt-box-market>
+                <bt-box-market id="derecha" [typeBox]="'text'" [data]="data[6]"></bt-box-market>
+            </div>
+            
+        </div>
+        <div class="home-body__right">
+            <bt-box-chart [typeBox]="'text'" [data]="data[0]"></bt-box-chart>
+            <bt-box-chart [typeBox]="'text'" [data]="data[1]"></bt-box-chart>
+            <bt-box-chart [typeBox]="'text'" [data]="data[2]" [button]="true"></bt-box-chart>
+            <bt-box-match [typeBox]="'text'" [data]="data[3]" [button]="true"></bt-box-match>
+        </div>
+    </div>
+</div>

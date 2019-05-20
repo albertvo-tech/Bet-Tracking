@@ -6,6 +6,10 @@ import { BtLoginComponent } from './components/bt-login/bt-login.component';
 import { BtHMenuItemComponent } from './components/bt-h-menu-item/bt-h-menu-item.component';
 import { BtInputComponent } from './components/bt-input/bt-input.component';
 import { BtButtonComponent } from './components/bt-button/bt-button.component';
+import { BtBoxChartComponent } from './components/bt-box-chart/bt-box-chart.component';
+import { BtBoxGraphicComponent } from './components/bt-box-graphic/bt-box-graphic.component';
+import { BtBoxMarketComponent } from './components/bt-box-market/bt-box-market.component';
+import { GoogleChartsModule } from 'angular-google-charts';
 
 @NgModule({
   declarations: [
@@ -14,18 +18,24 @@ import { BtButtonComponent } from './components/bt-button/bt-button.component';
     BtLoginComponent,
     BtHMenuItemComponent,
     BtInputComponent,
-    BtButtonComponent
+    BtButtonComponent,
+    BtBoxChartComponent,
+    BtBoxGraphicComponent,
+    BtBoxMarketComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    GoogleChartsModule
   ],
   exports: [
     BtVMenuComponent, 
     BtHMenuComponent,
     BtLoginComponent,
     BtInputComponent,
-    BtButtonComponent
-
+    BtButtonComponent,
+    BtBoxChartComponent,
+    BtBoxGraphicComponent,
+    BtBoxMarketComponent
   ]
 })
 export class BTCommonModule { }
