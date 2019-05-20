@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BtDatabaseService } from 'src/app/core/services/bt-database.service';
 
 @Component({
   selector: 'bt-home-view',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BtHomeViewComponent implements OnInit {
 
-  constructor() { }
+  constructor(private btDatabase: BtDatabaseService) { }
   data: any;
   ngOnInit() {
+    this.setData();
+    this.tryConnectDatabase();
+  }
+
+  tryConnectDatabase() {
+    this.btDatabase.getAllLeagues().subscribe(data =>{
+      console.log("Leagues", data)
+    });
+  }
+
+  setData() {
     this.data = [
       {
         'title': 'Notificar cuota',
@@ -35,7 +47,6 @@ export class BtHomeViewComponent implements OnInit {
         'title': 'GRAFICO',
         'desc': 'En esta caja se debe introducir la gráfica ejemplo de un partido'
       }
-    ]
+    ];
   }
-
 }
