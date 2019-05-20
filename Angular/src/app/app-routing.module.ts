@@ -4,7 +4,12 @@ import { BtHomeViewComponent } from './home/view/bt-home-view/bt-home-view.compo
 import { BtMatchViewComponent } from './match/view/bt-match-view/bt-match-view.component';
 
 const routes: Routes = [
-  { path: '**', component: BtMatchViewComponent },
+  { path: 'home', component: BtHomeViewComponent },
+  //{ path: 'notificarcuota', component: BtHomeViewComponent },
+  //{ path: 'verificación', component: BtHomeViewComponent },
+  //{ path: 'comunidad', component: BtHomeViewComponent },
+  { path: 'match', component: BtMatchViewComponent },
+  { path: '**', component: BtHomeViewComponent },
 ];
 
 @NgModule({

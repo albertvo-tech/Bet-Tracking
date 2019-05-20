@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'bt-h-menu-item',
@@ -8,9 +8,14 @@ import { Component, OnInit, Input } from '@angular/core';
 export class BtHMenuItemComponent implements OnInit {
 
   @Input() item;
+  @Output() itemClicked = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onClick() {
+    this.itemClicked.emit(this.item);
   }
 
 }

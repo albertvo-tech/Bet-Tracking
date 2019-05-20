@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'bt-h-menu',
@@ -7,13 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BtHMenuComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: Router) { }
   categories = [
     'Notificar cuota',
     'Verificación',
-    'Comparar cuotas'
+    'Comunidad'
   ];
   ngOnInit() {
+  }
+
+  navigateView(event) {
+    let name = event.toLowerCase().split(' ', '');
+    this.route.navigate(['/'+ name]);
   }
 
 }

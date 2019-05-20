@@ -1,7 +1,7 @@
 <div class="h-menu">
     <div class="categories_container">
         <div *ngFor="let category of categories">
-            <bt-h-menu-item [item]="category"></bt-h-menu-item>
+            <bt-h-menu-item [item]="category" (itemClicked)="navigateView($event)"></bt-h-menu-item>
         </div>
     </div>
     <bt-login></bt-login>
