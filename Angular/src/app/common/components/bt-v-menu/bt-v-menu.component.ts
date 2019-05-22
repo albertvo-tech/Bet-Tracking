@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'bt-v-menu',
@@ -8,7 +7,7 @@ import { Router } from '@angular/router';
 })
 export class BtVMenuComponent implements OnInit {
 
-  constructor(private route: Router) { }
+  constructor() { }
   sports: Array<any>;
   show: boolean = true;
 
@@ -68,14 +67,9 @@ export class BtVMenuComponent implements OnInit {
   }
 
   toggleCollapse() {
-    /*console.log("Before " + this.show);
+    console.log("Before " + this.show);
     this.show = !this.show;
-    console.log("After " + this.show);*/
-    this.route.navigate(['/home']);
-  }
-
-  matchSelected(match) {
-    this.route.navigate(['/match']);
+    console.log("After " + this.show);
   }
 
 }

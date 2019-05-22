@@ -13,20 +13,27 @@ export class BtHomeViewComponent implements OnInit {
     this.data = [
       {
         'title': 'Notificar cuota',
-        'desc': 'Texto a concretar en el que se hará una breve explicación de en que consiste exactamente esta funcionalidad.'
+        'desc': 'Añade un aviso en tu evento preferido para detectar de forma automática cuándo una cuota ha alcanzado el valor seleccionado.'
       },
       {
         'title': 'Verificación',
-        'desc': 'Texto a concretar en el que se hará una breve explicación de en que consiste exactamente esta funcionalidad.'
+        'desc': 'Introduce tu pronóstico y nuestro sistema verificará de forma automática si ha sido acertado o, por el contrario, errado.' + 
+                ' Si el pronóstico se realiza sobre mercados desconocidos el pronóstico será introducido en la verficación por comunidad.'
       },
       {
         'title': '¿Quien somos?',
-        'desc': 'Esta aplicación web esta destinada para aportar una ayuda a quien la necesite para obtener información sobre' + 
-                ' la fluctuación de cuotas de los eventos deportivos. Aquí podeis encontrar tres funcionalidades básicas que esperemos que os sirvan de ayuda.'
+        'desc': 'Bet Tracking es un grupo de estudiantes de Ingeniería Informática que ha desarrollado un sistema novedoso y actualizado ' +
+                'que permitirá a aquellas personas que quieran obtener benficios en apuestas deportivas, la información necesaria para ' +
+                'tomar mejores decisiones. ¡Bienvenidos al mundo de los ganadores!'
       },
       {
-        'title': 'Comparar cuotas',
-        'desc': 'Texto a concretar en el que se hará una breve explicación de en que consiste exactamente esta funcionalidad.'
+        'title': 'Comunidad',
+        'desc': 'Verifica un máximo de 10 pronósticos al día y entrarás en el sorteo de descuentos, y una gran diversidad de artículos.' +
+                ' ¡Conviertete en el verificador del mes y obtendrás un regalo de forma automática! ¿A qué esperas?'
+      },
+      {
+        'title': 'GRAFICO',
+        'desc': 'En esta caja se debe introducir la gráfica ejemplo de un partido'
       }
     ]
   }

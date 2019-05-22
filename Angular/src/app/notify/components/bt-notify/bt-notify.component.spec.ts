@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BtBoxMatchComponent } from './bt-box-match.component';
+import { BtNotifyComponent } from './bt-notify.component';
 
-describe('BtBoxMatchComponent', () => {
-  let component: BtBoxMatchComponent;
-  let fixture: ComponentFixture<BtBoxMatchComponent>;
+describe('BtNotifyComponent', () => {
+  let component: BtNotifyComponent;
+  let fixture: ComponentFixture<BtNotifyComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BtBoxMatchComponent ]
+      declarations: [ BtNotifyComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BtBoxMatchComponent);
+    fixture = TestBed.createComponent(BtNotifyComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

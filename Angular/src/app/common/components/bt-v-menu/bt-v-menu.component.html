@@ -10,7 +10,7 @@
         <li class="has-sub" *ngFor="let league of sport.leagues">
           <a>{{league.name}}</a>
           <ul *ngIf="league.matchs.length != 0">
-            <li *ngFor="let match of league.matchs" (click)="matchSelected(match)">
+            <li *ngFor="let match of league.matchs">
               <a>{{match.name}}</a>
             </li>
           </ul>

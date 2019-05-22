@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BtBoxMarketComponent } from './bt-box-market.component';
+import { BtBoxFormComponent } from './bt-box-form.component';
 
-describe('BtBoxMarketComponent', () => {
-  let component: BtBoxMarketComponent;
-  let fixture: ComponentFixture<BtBoxMarketComponent>;
+describe('BtBoxFormComponent', () => {
+  let component: BtBoxFormComponent;
+  let fixture: ComponentFixture<BtBoxFormComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BtBoxMarketComponent ]
+      declarations: [ BtBoxFormComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BtBoxMarketComponent);
+    fixture = TestBed.createComponent(BtBoxFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

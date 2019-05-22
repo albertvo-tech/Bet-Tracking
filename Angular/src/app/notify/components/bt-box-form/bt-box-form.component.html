@@ -1,0 +1,45 @@
+<form class="general" [formGroup]="profileForm">
+  <div class="general__left">
+  <div class="bt-box-form">
+    
+    <label>
+      Escoge un deporte:
+      <select class="confondo" formControlName="deporte" (change)="deporteEscogido()">
+          <option value="">Selecciona un deporte</option>
+          <option *ngFor="let t of tipoDeportes">{{t}}</option>
+      </select>
+    </label>
+  </div>
+
+  <div class="bt-box-form">
+      <label>
+        Escoge una liga:
+        <select class="confondo" formControlName="liga" (change)="partidoEscogido()">
+            <option value="">Selecciona una liga/torneo</option>
+            <option *ngFor="let p of eventoEscogido">{{p.name}}</option>
+        </select>
+      </label>
+  </div>
+</div>
+<div class="general__right">
+  <div class="bt-box-form">
+      <label>
+        Escoge un partido / evento:
+        <select class="confondo" formControlName="evento">
+            <option value="">Selecciona un partido/evento</option>
+            <option *ngFor="let z of ligaEscogida">{{z.name}}</option>
+  
+        </select>
+      </label>
+    </div>
+
+  <div class="bt-box-form">
+        <label>
+          Establece una cuota para recibir una alerta:
+          <input class="confondo" type="text" formControlName="cuota">
+        </label>
+    </div>
+  </div>
+</form>
+<button type="submit" [disabled]="!profileForm.valid">CREAR NOTIFICACIÓN</button>
+

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BtBoxChartComponent } from './bt-box-chart.component';
+import { BtNotifyFormComponent } from './bt-notify-form.component';
 
-describe('BtBoxChartComponent', () => {
-  let component: BtBoxChartComponent;
-  let fixture: ComponentFixture<BtBoxChartComponent>;
+describe('BtNotifyFormComponent', () => {
+  let component: BtNotifyFormComponent;
+  let fixture: ComponentFixture<BtNotifyFormComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BtBoxChartComponent ]
+      declarations: [ BtNotifyFormComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BtBoxChartComponent);
+    fixture = TestBed.createComponent(BtNotifyFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
