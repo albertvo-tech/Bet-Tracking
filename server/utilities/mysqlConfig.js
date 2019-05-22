@@ -9,9 +9,16 @@ var connection = mysql.createConnection({
     database: config.DB_URL_MYSQL.database,
 });
 
-connection.connect(() => {
+/*connection.connect(() => {
     require('../models/leagues').initialize();
 });
+
+connection.end(function(err) {
+    if (err) {
+      return console.log('error:' + err.message);
+    }
+    console.log('Close the database connection.');
+});*/
 
 let getDB = () => {
     return connection;

@@ -8,6 +8,14 @@ let serverURLs = {
         "MYSQL_USER": 'root',
         "MYSQL_PASSWORD": 'root',
         'MYSQL_DATABASE': 'bettracking',
+    },
+    "prod": {
+        "NODE_SERVER": "http://localhost",
+        "NODE_SERVER_PORT": "3000",
+        "MYSQL_HOST": 'localhost',
+        "MYSQL_USER": 'js',
+        "MYSQL_PASSWORD": 'js',
+        'MYSQL_DATABASE': 'BetTracking',
     }
 }
 
