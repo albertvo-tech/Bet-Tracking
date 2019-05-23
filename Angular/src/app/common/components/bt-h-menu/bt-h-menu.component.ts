@@ -18,8 +18,22 @@ export class BtHMenuComponent implements OnInit {
   }
 
   navigateView(event) {
-    let name = event.toLowerCase().split(' ', '');
+    let name = event.toLowerCase();
+    name = this.translateName(name);
     this.route.navigate(['/'+ name]);
+  }
+
+  translateName(name) {
+    switch(name) {
+      case 'notificar cuota':
+        return 'notify';
+      case 'verificación':
+        return('verify');
+      case 'comunidad':
+        return 'community'
+      default:
+        return 'home'
+    }
   }
 
 }

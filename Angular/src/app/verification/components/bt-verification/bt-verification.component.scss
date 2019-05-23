@@ -1,0 +1,27 @@
+.bt-verification {
+    background-color: #D8D8D8;
+    margin: 20px;
+    padding: 0px 20px 10px;
+    font-family: Arial, Helvetica, sans-serif;
+
+    &__desc {
+        font-size: 24px;
+        margin-top: -10px;
+        
+    }
+
+    &__button {
+        background-color: green;
+        font-size: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 500px;
+        height: 75px;
+    }
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
