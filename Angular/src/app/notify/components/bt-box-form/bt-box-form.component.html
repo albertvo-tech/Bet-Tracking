@@ -1,7 +1,7 @@
 <form class="general" [formGroup]="profileForm">
   <div class="general__left">
   <div class="bt-box-form">
-    
+
     <label>
       Escoge un deporte:
       <select class="confondo" formControlName="deporte" (change)="deporteEscogido()">
@@ -16,7 +16,7 @@
         Escoge una liga:
         <select class="confondo" formControlName="liga" (change)="partidoEscogido()">
             <option value="">Selecciona una liga/torneo</option>
-            <option *ngFor="let p of eventoEscogido">{{p.name}}</option>
+            <option *ngFor="let p of eventoEscogido" ng-model="liga">{{p.name}}</option>
         </select>
       </label>
   </div>
@@ -27,8 +27,8 @@
         Escoge un partido / evento:
         <select class="confondo" formControlName="evento">
             <option value="">Selecciona un partido/evento</option>
-            <option *ngFor="let z of ligaEscogida">{{z.name}}</option>
-  
+            <option *ngFor="let z of ligaEscogida" ng-model="partido">{{z.name}}</option>
+
         </select>
       </label>
     </div>
@@ -41,5 +41,5 @@
     </div>
   </div>
 </form>
-<button type="submit" [disabled]="!profileForm.valid">CREAR NOTIFICACIÓN</button>
+<button type="button"  (click)="makeNotificaction()">CREAR NOTIFICACIÓN</button>
 

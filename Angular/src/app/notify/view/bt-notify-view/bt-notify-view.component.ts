@@ -1,5 +1,6 @@
+import { NotifyModule } from './../../notify.module';
 import { Component, OnInit } from '@angular/core';
-
+import { Notificacion } from './notificacion';
 
 @Component({
   selector: 'bt-notify-view',
@@ -9,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class BtNotifyViewComponent implements OnInit {
 
   constructor() { }
-
+    show: boolean = true;
   data: any;
   ngOnInit() {
     this.data = [
@@ -20,7 +21,7 @@ export class BtNotifyViewComponent implements OnInit {
       },
       {
         'title': 'CREAR NOTIFICACIÓN',
-        'desc': 'Introduce tu pronóstico y nuestro sistema verificará de forma automática si ha sido acertado o, por el contrario, errado.' + 
+        'desc': 'Introduce tu pronóstico y nuestro sistema verificará de forma automática si ha sido acertado o, por el contrario, errado.' +
                 ' Si el pronóstico se realiza sobre mercados desconocidos el pronóstico será introducido en la verficación por comunidad.'
       },
       {
@@ -44,5 +45,11 @@ export class BtNotifyViewComponent implements OnInit {
       },
     ]
   }
-
+  makeNotificaction(notification: Notificacion){
+    //let notify: Notification = new Notification(notification.title, notification.options)
+    if(notification){
+      console.log(this.show);
+      //notify.onclick = notification.onClick;
+    }
+}
 }
