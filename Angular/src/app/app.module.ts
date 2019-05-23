@@ -8,6 +8,7 @@ import { BTHomeModule } from './home/home.module';
 import { BTMatchModule } from './match/match.module';
 import { GoogleChartsModule } from 'angular-google-charts';
 import { BTVerificationModule } from './verification/verification.module';
+import { NotifyModule } from './notify/notify.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { BTVerificationModule } from './verification/verification.module';
     BTCoreModule,
     BTHomeModule,
     BTMatchModule,
-    BTVerificationModule
+    BTVerificationModule,
+    NotifyModule
   ],
   providers: [],
   bootstrap: [AppComponent]
