@@ -2,6 +2,7 @@ let express = require('express'),
     router = express.Router(),
     util = require('../utilities/util'),
     leaguesService = require('../services/leagues');
+    sportsService = require('../services/sports');
 
 /**Api to create article */
 router.post('/create-article', (req, res) => {
@@ -31,11 +32,26 @@ router.get('/get-leagues', (req, res) => {
     });
 });
 
-// /**API to get the article by id... */
-router.get('/get-article-by-id', (req, res) => {
-    articleService.getArticleById(req.query, (data) => {
+/**Api to get the list of leagues by sport*/
+router.get('/get-leagues-by-sport', (req, res) => {
+    leaguesService.getLeaguesBySport(req.body, (data) => {
         res.send(data);
     });
 });
+
+/**Api to get the list of sports */
+router.get('/get-sports', (req, res) => {
+    sportsService.getSports(req.query, (data) => {
+        res.send(data);
+    });
+});
+
+/**Api to get the list of leagues by sport*/
+router.get('/get-sports-by-id', (req, res) => {
+    sportsService.getSportsById(req.body, (data) => {
+        res.send(data);
+    });
+});
+
 
 module.exports = router;

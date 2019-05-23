@@ -1,13 +1,13 @@
 let async = require('async'),
     parseString = require('xml2js').parseString;
 let util = require('../utilities/util'),
-    leaguesDAO = require('../DAO/leaguesDAO');
+    sportsDAO = require('../DAO/sportsDAO');
 
-/***API to get the leagues list */
-let getLeagues = (data, callback) => {
+/***API to get the sports list */
+let getSports = (data, callback) => {
     async.auto({
-        routes: (cb) => {
-            leaguesDAO.getLeagues({}, (err, data) => {
+        sports: (cb) => {
+            sportsDAO.getSports({}, (err, data) => {
                 if (err) {
                     cb(null, { "errorCode": util.statusCode.INTERNAL_SERVER_ERROR, "statusMessage": util.statusMessage.SERVER_BUSY });
                     return;
@@ -21,14 +21,14 @@ let getLeagues = (data, callback) => {
     })
 }
 
-/***API to get the leagues by sport */
-let getLeaguesBySport = (data, callback) => {
+/***API to get the sport by id */
+let getSportsById = (data, callback) => {
     async.auto({
-        leagues: (cb) => {
+        sports: (cb) => {
             let criteria = {
                 "id": data
             }
-            leaguesDAO.getLeaguesBySport(criteria, (err, data) => {
+            sportsDAO.getSportsById(criteria, (err, data) => {
                 if (err) {
                     console.log(err, 'error----');
                     cb(null, { "errorCode": util.statusCode.INTERNAL_SERVER_ERROR, "statusMessage": util.statusMessage.SERVER_BUSY });
@@ -44,6 +44,6 @@ let getLeaguesBySport = (data, callback) => {
 }
 
 module.exports = {
-    getLeagues: getLeagues,
-    getLeaguesBySport: getLeaguesBySport
+    getSports: getSports,
+    getSportsById: getSportsById
 };

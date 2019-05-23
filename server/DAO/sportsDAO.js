@@ -1,34 +1,28 @@
 let dbConfig = require("../utilities/mysqlConfig");
 
-let getLeagues = () => {
-    let response;
+let getSports = () => {
     connection = dbConfig.getDB();
     connection.connect();
-    connection.query(`select * from leagues`,
+    connection.query(`SELECT sport_name FROM sports`,
         function (err, rows, fields) {
-            if (!err) {
+            if (!err)
                 console.log('The solution is: ', rows);
-                response = rows;
-            }
-            else {
+            else
                 console.log('Error while performing Query.');
-            }  
         });
-    
+
     connection.end(function (err) {
         if (err) {
             return console.log('error:' + err.message);
         }
         console.log('Close the database connection.');
     });
-
-    return response
 }
 
-let getLeaguesBySport = (criteria) => {
+let getSportsById = (criteria) => {
     connection = dbConfig.getDB();
     connection.connect();
-    connection.query(`SELECT league_name FROM leagues, matches WHERE LEAGUE_SPORT_ID = '${criteria.id}'`,
+    connection.query(`SELECT sport_name FROM sports where SPORT_ID = '${criteria.id}'`,
         function (err, rows, fields) {
             if (!err)
                 console.log('The solution is: ', rows);
@@ -45,5 +39,6 @@ let getLeaguesBySport = (criteria) => {
 }
 
 module.exports = {
-    getLeagues: getLeagues
+    getSports: getSports,
+    getSportsById: getSportsById
 }

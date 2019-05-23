@@ -5,7 +5,7 @@ express = require('express'),
 cors = require('cors'),
 http = require('http'),
 path = require('path');
-let articleRoute = require('./routes/leagues'),
+let totalRoutes = require('./routes/totalRoutes'),
 util = require('./utilities/util');
 
 app.use(bodyParser.json());
@@ -15,7 +15,7 @@ app.use(function(err, req, res, next) {
     return res.send({ "statusCode": util.statusCode.ONE, "statusMessage":util.statusMessage.SOMETHING_WENT_WRONG });
 });
 
-app.use('/leagues', articleRoute);
+app.use('/routes', totalRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
