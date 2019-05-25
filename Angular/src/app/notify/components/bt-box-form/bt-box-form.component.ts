@@ -1,36 +1,17 @@
-import { Component, OnInit, Input, SystemJsNgModuleLoader } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { FormControl, ReactiveFormsModule, FormGroup } from '@angular/forms';
-import { Notificacion } from './notificacion';
-import { NotifierModule, NotifierService } from 'angular-notifier';
-import {NgModule} from '@angular/core'
-import { CommonModule } from '@angular/common';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrManager } from 'ng6-toastr-notifications';
 
-import { ToastrModule, ToastrService } from 'ngx-toastr';
-@NgModule( {
-  imports: [
-    CommonModule,
-    BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot({
-      timeOut: 10000,
-      positionClass: 'toast-bottom-right',
-      preventDuplicates: true,
-    }), // ToastrModule added
-    NotifierModule.withConfig( {
-      // Custom options in here
-    } )
-  ]
-} )
+
 @Component({
   selector: 'bt-box-form',
   templateUrl: './bt-box-form.component.html',
   styleUrls: ['./bt-box-form.component.scss']
 })
 export class BtBoxFormComponent implements OnInit {
-  private readonly notifier: NotifierService;
-  private toastr: ToastrService;
-  toastrService: any;
-  constructor() { }
+
+
+  constructor(public toastr: ToastrManager) { }
   show: boolean = true;
   ngOnInit() {
 
@@ -74,25 +55,32 @@ export class BtBoxFormComponent implements OnInit {
     const partido = this.profileForm.get('liga').value;
     this.ligaEscogida = this.allLigas.filter(p => p.type == partido);
   }
-  makeNotificaction(notifierService: NotifierService){
+  makeNotificaction(){
     console.log(this.profileForm.get('liga').value);
     console.log(this.profileForm.get('deporte').value);
-    this.toastr.success('Hello world!', 'Toastr fun!');
-    this.toastrService.error('everything is broken', 'Major Error', {
-      timeOut: 3000
-    });
-    this.notifier.show( {
-      type: 'success',
-      message: 'You are awesome! I mean it!',
-      id: 'THAT_NOTIFICATION_ID' // Again, this is optional
-    } );
-     this.notifier.notify( 'success', 'You are awesome! I mean it!', 'THAT_NOTIFICATION_ID' );
-    if(NotifierService){
-      console.log("dentro");
-      this.notifier.notify( 'success', 'You are awesome! I mean it!', 'THAT_NOTIFICATION_ID' );
-    }
 
 }
+showSuccess() {
+  this.toastr.successToastr('This is success toast.', 'Success!');
+}
 
+showError() {
+  this.toastr.errorToastr('This is error toast.', 'Oops!');
+}
+
+showWarning() {
+  this.toastr.warningToastr('This is warning toast.', 'Alert!');
+}
+
+showInfo() {
+  this.toastr.infoToastr('This is a toast', 'Info');
+}
+
+
+showToast(position: any = 'top-left') {
+  this.toastr.infoToastr('This is a toast.', 'Toast', {
+      position: position
+  });
+}
 }
 

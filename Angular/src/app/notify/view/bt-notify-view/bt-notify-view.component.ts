@@ -1,6 +1,6 @@
-import { NotifyModule } from './../../notify.module';
+
 import { Component, OnInit } from '@angular/core';
-import { Notificacion } from './notificacion';
+
 
 @Component({
   selector: 'bt-notify-view',
@@ -45,11 +45,11 @@ export class BtNotifyViewComponent implements OnInit {
       },
     ]
   }
-  makeNotificaction(notification: Notificacion){
+  makeNotificaction(){
     //let notify: Notification = new Notification(notification.title, notification.options)
-    if(notification){
+
       console.log(this.show);
       //notify.onclick = notification.onClick;
-    }
+    
 }
 }
