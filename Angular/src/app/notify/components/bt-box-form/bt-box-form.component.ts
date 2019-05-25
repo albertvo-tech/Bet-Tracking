@@ -73,7 +73,8 @@ showWarning() {
 }
 
 showInfo() {
-  this.toastr.infoToastr('This is a toast', 'Info');
+  
+  this.toastr.infoToastr(this.profileForm.get('liga').value, 'Info');
 }
 
 
