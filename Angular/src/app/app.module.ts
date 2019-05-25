@@ -10,6 +10,7 @@ import { GoogleChartsModule } from 'angular-google-charts';
 import { BTVerificationModule } from './verification/verification.module';
 import { NotifyModule } from './notify/notify.module';
 import { BTCommunityModule } from './community/community.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { BTCommunityModule } from './community/community.module';
     BTVerificationModule,
     NotifyModule,
     BTCommunityModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

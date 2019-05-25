@@ -10,6 +10,7 @@ export class BtBoxHomeComponent implements OnInit {
   constructor() { }
   @Input() typeBox;
   @Input() data;
+  @Input() isButton;
 
   ngOnInit() {
   }
