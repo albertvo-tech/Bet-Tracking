@@ -6,9 +6,9 @@ import { BTCommonModule } from '../common/common.module';
 import { BtNotifyFormComponent } from './components/bt-notify-form/bt-notify-form.component';
 import { BtBoxFormComponent } from './components/bt-box-form/bt-box-form.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import {BrowserModule} from '@angular/platform-browser';
-import {ToastrModule} from 'ng6-toastr-notifications';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserModule } from '@angular/platform-browser';
+import { ToastrModule } from 'ng6-toastr-notifications';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
