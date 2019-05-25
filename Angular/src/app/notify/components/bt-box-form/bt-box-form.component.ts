@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, SystemJsNgModuleLoader } from '@angular/core';
 import { FormControl, ReactiveFormsModule, FormGroup } from '@angular/forms';
+import { ToastrManager } from 'ng6-toastr-notifications';
 
 @Component({
   selector: 'bt-box-form',
@@ -8,7 +9,8 @@ import { FormControl, ReactiveFormsModule, FormGroup } from '@angular/forms';
 })
 export class BtBoxFormComponent implements OnInit {
 
-  constructor() { }
+  constructor(public toastr: ToastrManager) {}
+    show: boolean = true;
 
   ngOnInit() {
   }
@@ -45,14 +47,51 @@ export class BtBoxFormComponent implements OnInit {
   deporteEscogido(){
     const tipoEvento = this.profileForm.get('deporte').value;
     this.eventoEscogido = this.allDeportes.filter(p => p.type == tipoEvento);
+    return tipoEvento;
   }
 
   partidoEscogido(){
     const partido = this.profileForm.get('liga').value;
     this.ligaEscogida = this.allLigas.filter(p => p.type == partido);
+    return partido;
   }
 
+  partidoEvento(){
+    const evento = this.profileForm.get('evento').value;
+    this.ligaEscogida = this.allLigas.filter(p => p.type == evento);
+    return evento;
+  }
+
+  cuotaEscogida(){
+    const cuota = this.profileForm.get('cuota').value;
+    return cuota;
+  }
+
+  fullName: string = `Notificación`;
+  cuotaBD: number = 2.50;
+
+  
+
+  showSuccess() {
+    const texto = this.partidoEscogido() + ', ' + this.partidoEvento() + ', ' + this.cuotaEscogida();
+    this.toastr.successToastr(this.fullName);
+    this.toastr.infoToastr(texto, 'Aviso cuota');
+  }
+
+  showNotification(){
+    const deporte = this.deporteEscogido();
+    const liga = this.partidoEscogido();
+    const partido = this.partidoEvento();
+    const cuota = this.cuotaEscogida();
+    
+    /*if(deporte == 'Fútbol' && liga == 'Liga española' && partido == 'Barcelona vs Real Madrid'){
+      this.showSuccess();
+    }*/
+    if(deporte != '' && liga != '' && partido != '' && cuota != '' && cuota > this.cuotaBD){
+      this.showSuccess();
+    }
+  }
+  
+  
 
 }
-
-

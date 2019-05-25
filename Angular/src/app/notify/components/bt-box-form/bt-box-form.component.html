@@ -1,4 +1,4 @@
-<form class="general" [formGroup]="profileForm">
+<form class="general" [formGroup]="profileForm" id = "myform">
   <div class="general__left">
   <div class="bt-box-form">
     
@@ -41,5 +41,5 @@
     </div>
   </div>
 </form>
-<button type="submit" [disabled]="!profileForm.valid">CREAR NOTIFICACIÓN</button>
+<button type="button" (click)="showNotification()">CREAR NOTIFICACIÓN</button>
 
