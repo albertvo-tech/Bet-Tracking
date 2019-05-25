@@ -45,5 +45,6 @@ let getLeaguesBySport = (criteria) => {
 }
 
 module.exports = {
-    getLeagues: getLeagues
+    getLeagues: getLeagues,
+    getLeaguesBySport: getLeaguesBySport
 }
