@@ -26,7 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
     BTMatchModule,
     BTVerificationModule,
     NotifyModule,
-    BTCommunityModule
+    BTCommunityModule,
     HttpClientModule
   ],
   providers: [],
