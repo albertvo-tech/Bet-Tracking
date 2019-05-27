@@ -212,6 +212,16 @@ let getOddSoccerAverage = (criteria) => {
     return response
 }
 
+let getOdds = (criteria,callback) => {
+    connection = dbConfig.getDB();
+    connection.connect();
+    connection.query(`SELECT MATCH_TEAM1_ID,MATCH_TEAM2_ID,ODD_1,ODD_2,ODD_X FROM leagues, matches, odds_1x2 
+    WHERE leagues.LEAGUE_SPORT_ID = ${criteria.sportID}
+    and leagues.LEAGUE_ID= ${criteria.leagueID} 
+    and odds_1x2.ODD_MATCH_ID= ${criteria.matchID}
+    Order by MATCH_TEAM1_ID,MATCH_TEAM2_ID,odds_1x2.ODD_REC ASC;`, criteria, callback);
+}
+
 module.exports = {
     getOddSoccer1: getOddSoccer1, 
     getOddSoccerX: getOddSoccerX,
@@ -219,5 +229,6 @@ module.exports = {
     getOddSoccerMax: getOddSoccerMax,
     getOddSoccerMin: getOddSoccerMin,
     getOddSoccerMaxBet: getOddSoccerMaxBet,
-    getOddSoccerAverage: getOddSoccerAverage
+    getOddSoccerAverage: getOddSoccerAverage,
+    getOdds: getOdds
 }

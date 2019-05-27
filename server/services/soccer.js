@@ -129,6 +129,28 @@ let getOddSoccerAverage = (data, callback) => {
     })
 }
 
+/***API to get odds */
+let getOdds = (data, callback) => {
+    async.auto({
+        routes: (cb) => {
+            let criteria = {
+                "sportID": data.sportID,
+                "leagueID": data.leagueID,
+                "matchID": data.matchID
+            }
+            soccerDAO.getOdds(criteria, (err, data) => {
+                if (err) {
+                    cb(null, { "errorCode": util.statusCode.INTERNAL_SERVER_ERROR, "statusMessage": util.statusMessage.SERVER_BUSY });
+                    return;
+                }
+                cb(null, data);
+                return;
+            });
+        }
+    }, (err, response) => {
+        callback(response);
+    })
+}
 
 module.exports = {
     getOddSoccer1: getOddSoccer1,
@@ -137,5 +159,6 @@ module.exports = {
     getOddSoccerMax: getOddSoccerMax,
     getOddSoccerMin: getOddSoccerMin,
     getOddSoccerMaxBet: getOddSoccerMaxBet,
-    getOddSoccerAverage: getOddSoccerAverage
+    getOddSoccerAverage: getOddSoccerAverage,
+    getOdds: getOdds
 };

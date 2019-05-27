@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'bt-v-menu',
@@ -17,31 +17,26 @@ export class BtVMenuComponent implements OnInit {
       'name': 'Fútbol',
       'icon': 'https://img.icons8.com/metro/20/000000/football2.png',
       'leagues': [
-      {
-        'name':'Liga Santander',
-        'matchs': [{
-          'name': 'FC Barcelona vs Real Madrid'
-        }]
-      },
-      {
-        'name':'Premier League',
-        'matchs': [{
-          'name': 'Manchester City vs Tottenham'
-        }]
-      }]
+        {
+          'name': 'Brazil Serie A',
+          'matchs': [{
+            'name': 'Bahia vs Fluminense'
+          }]
+        }
+      ]
     },
-    { 
+    {
       'name': 'Baloncesto',
       'icon': 'https://img.icons8.com/ios/20/000000/basketball-filled.png',
       'leagues': [
         {
-          'name':'NBA',
+          'name': 'NBA',
           'matchs': [{
             'name': 'Golden State Warriors vs Houston Rockets'
           }]
         },
         {
-          'name':'Euroliga',
+          'name': 'Euroliga',
           'matchs': [{
             'name': 'Anadolu Efes vs FC Barcelona'
           }]
@@ -52,13 +47,13 @@ export class BtVMenuComponent implements OnInit {
       'icon': 'https://img.icons8.com/ios/20/000000/tennis-ball.png',
       'leagues': [
         {
-          'name':'ATP Barcelona',
+          'name': 'ATP Barcelona',
           'matchs': [{
             'name': 'Rafael Nadal vs David Ferrer'
           }]
         },
         {
-          'name':'WTA Barcelona',
+          'name': 'WTA Barcelona',
           'matchs': [{
             'name': 'XX vs YY'
           }]
@@ -75,7 +70,14 @@ export class BtVMenuComponent implements OnInit {
   }
 
   matchSelected(match) {
-    this.route.navigate(['/match']);
+    let navigationExtras: NavigationExtras = {
+      queryParams: {
+        "sportID": 153,
+        "leagueID": 6,
+        "matchID": 12
+      }
+    };
+    this.route.navigate(['/match'], navigationExtras);
   }
 
 }

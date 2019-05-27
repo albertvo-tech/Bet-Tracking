@@ -2,16 +2,17 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BTCommonModule } from '../common/common.module';
 import { BtVerificationViewComponent } from './view/bt-verification-view/bt-verification-view.component';
-import { BtVerificationComponent } from './components/bt-verification/bt-verification.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    BtVerificationViewComponent,
-    BtVerificationComponent
+    BtVerificationViewComponent
   ],
   imports: [
     CommonModule,
-    BTCommonModule
+    BTCommonModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   exports: [
   ]

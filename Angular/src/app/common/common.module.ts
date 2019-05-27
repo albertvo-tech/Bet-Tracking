@@ -10,6 +10,12 @@ import { BtBoxChartComponent } from './components/bt-box-chart/bt-box-chart.comp
 import { BtBoxGraphicComponent } from './components/bt-box-graphic/bt-box-graphic.component';
 import { BtBoxMarketComponent } from './components/bt-box-market/bt-box-market.component';
 import { GoogleChartsModule } from 'angular-google-charts';
+import { BtNotifyComponent } from './components/bt-notify/bt-notify.component';
+import { BtBoxFormComponent } from './components/bt-box-form/bt-box-form.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ng6-toastr-notifications';
 
 @NgModule({
   declarations: [
@@ -21,11 +27,18 @@ import { GoogleChartsModule } from 'angular-google-charts';
     BtButtonComponent,
     BtBoxChartComponent,
     BtBoxGraphicComponent,
-    BtBoxMarketComponent
+    BtBoxMarketComponent,
+    BtNotifyComponent,
+    BtBoxFormComponent
   ],
   imports: [
     CommonModule,
-    GoogleChartsModule
+    GoogleChartsModule,
+    ReactiveFormsModule,
+    FormsModule,
+    BrowserModule, 
+    BrowserAnimationsModule, 
+    ToastrModule.forRoot()
   ],
   exports: [
     BtVMenuComponent, 
@@ -35,7 +48,10 @@ import { GoogleChartsModule } from 'angular-google-charts';
     BtButtonComponent,
     BtBoxChartComponent,
     BtBoxGraphicComponent,
-    BtBoxMarketComponent
+    BtBoxMarketComponent,
+    BtNotifyComponent,
+    BtBoxFormComponent
+
   ]
 })
 export class BTCommonModule { }

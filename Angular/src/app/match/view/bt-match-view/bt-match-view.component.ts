@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { BtDatabaseService } from 'src/app/core/services/bt-database/bt-database.service';
 
 @Component({
   selector: 'bt-match-view',
@@ -7,8 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BtMatchViewComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: ActivatedRoute, private btDatabase: BtDatabaseService) { }
   data: any;
+  dataChart: any;
+  sportID: any;
+  leagueID: any;
+  matchID: any;
+  mercado = '1';
   ngOnInit() {
     this.data = [
       {
@@ -31,15 +38,32 @@ export class BtMatchViewComponent implements OnInit {
         'button': 'Comparar'
       },
       {
-        'title': 'VISUALIZAR HANDICAP',
+        'title': 'Ganador Local',
       },
       {
-        'title': 'DESCANSO/FINAL',
+        'title': 'Empate',
       },
       {
-        'title': 'OVER/UNDER GOLES',
+        'title': 'Ganador Visitante',
       }
     ];
+
+    this.route.queryParams.subscribe(params => {
+      this.sportID = params["sportID"];
+      this.leagueID = params["leagueID"];
+      this.matchID = params["matchID"];
+      this.getDataForChart('');
+    });
   }
 
+  getDataForChart(event) {
+    this.dataChart = this.btDatabase.getOdds(this.sportID, this.leagueID, this.matchID, event); 
+    this.setDataStats(event)
+  }
+
+  setDataStats(event) {
+    console.log("EVENT: ", event)
+    this.data[0].desc = this.btDatabase.getMax(this.sportID, this.leagueID, this.matchID, event);
+    this.data[1].desc = this.btDatabase.getMin(this.sportID, this.leagueID, this.matchID, event);
+  }
 }

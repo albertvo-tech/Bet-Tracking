@@ -11,15 +11,8 @@ export class BtBoxGraphicComponent implements OnInit {
   @Input() typeBox;
   @Input() data;
   myType = 'LineChart';
-  myData = [
-    ['London', 8136000],
-    ['New York', 8538000],
-    ['Paris', 2244000],
-    ['Berlin', 3470000],
-    ['Kairo', 19500000],
-  ]; 
-  myColumnNames = ['City', 'Inhabitants'];
-  myTitle = 'Prueba Grafica';
+  myColumnNames = ['Time', 'Odds'];
+  myTitle = 'Fluctuación de cuotas';
 
   ngOnInit() {
   }

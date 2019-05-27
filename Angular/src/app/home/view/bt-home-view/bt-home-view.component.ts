@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BtDatabaseService } from 'src/app/core/services/bt-database.service';
+import { BtDatabaseService } from 'src/app/core/services/bt-database/bt-database.service';
 
 @Component({
   selector: 'bt-home-view',

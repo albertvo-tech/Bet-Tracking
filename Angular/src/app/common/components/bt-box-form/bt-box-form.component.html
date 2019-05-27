@@ -33,11 +33,21 @@
       </label>
     </div>
 
-  <div class="bt-box-form">
+  <div class="bt-box-form" *ngIf="notifyType">
         <label>
           Establece una cuota para recibir una alerta:
           <input class="confondo" type="text" formControlName="cuota">
         </label>
+    </div>
+    <div class="bt-box-form" *ngIf="verifyType">
+      <label>
+        Escoge un mercado:
+        <select class="confondo" formControlName="cuota">
+            <option value="">Selecciona un mercado</option>
+            <option *ngFor="let abc of allMercados">{{abc.name}}</option>
+  
+        </select>
+      </label>
     </div>
   </div>
 </form>

@@ -183,5 +183,12 @@ router.get('/get-nolose-teams', (req, res) => {
     });
 });
 
+/**Api to get the odds*/
+router.get('/get-odds', (req, res) => {
+    soccerService.getOdds(req.query, (data) => {
+        res.send(data);
+    });
+});
+
 
 module.exports = router;
