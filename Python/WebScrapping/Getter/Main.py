@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-# Fútbol
-print("Fútbol")
 import Split_Futbol
 import Split_Tenis
 import Split_Baloncesto
@@ -98,12 +96,6 @@ while exit == False:
                 #------------------------------
                 #Fútbol Directo
                 #------------------------------
-                div = browser.find_element_by_xpath("//div[contains(text(),'Fútbol')]").get_attribute('outerHTML')
-                print(str(div))
-                if(div.find('style=""') == -1):
-                    print("TAB SWITCHING ERROR - FOOTBALL")
-                    break
-
                 futbol = browser.page_source
                 futbol = BeautifulSoup(futbol, "html.parser")
                 datos = []
@@ -125,46 +117,52 @@ while exit == False:
                     #Baloncesto
                     #------------------------------
                     browser.switch_to_window("baloncesto")
-                    div = browser.find_element_by_xpath("//div[contains(text(),'Baloncesto')]").get_attribute('outerHTML')
-                    if(div.find('style=""') == -1):
-                        print("TAB SWITCHING ERROR - BASKETBALL")
-                        break
-                    baloncesto = browser.page_source
-                    baloncesto = BeautifulSoup(baloncesto, "html.parser")
-                    datos = []
-                    datos=baloncesto.find_all(attrs={'class':['ipo-CompetitionButton_NameLabelHasMarketHeading', 'ipo-InPlayTimer', 'ipo-PeriodInfo',   'ipo-TeamStack_TeamWrapper', 'ipo-TeamPoints_TeamScore', 'gl-ParticipantCentered_Handicap', 'gl-ParticipantCentered_Odds', 'ipo-MainMarketRenderer_BlankParticipant']})
-                    #Funcion para separar clasificar datos
-                    lista, c_ok, c_fail = [], 0, 0
                     try:
-                        lista, c_ok, c_fail = Split_Baloncesto.splitbaloncesto(datos)
-                        db.loop_direct_bas(lista)
-                        print("BASKETBALL - Success: {}, FAILED: {}".format(c_ok, c_fail))
-                    except Exception as e:
-                        print("ERROR - BASKETBALL - " + str(e))
-                        break
+                        div = browser.find_element_by_xpath("//div[contains(text(),'Baloncesto')]").get_attribute('outerHTML')
+                        if(div.find('style=""') == -1):
+                            print("TAB SWITCHING ERROR - BASKETBALL")
+                            break
+                        baloncesto = browser.page_source
+                        baloncesto = BeautifulSoup(baloncesto, "html.parser")
+                        datos = []
+                        datos=baloncesto.find_all(attrs={'class':['ipo-CompetitionButton_NameLabelHasMarketHeading', 'ipo-InPlayTimer', 'ipo-PeriodInfo',   'ipo-TeamStack_TeamWrapper', 'ipo-TeamPoints_TeamScore', 'gl-ParticipantCentered_Handicap', 'gl-ParticipantCentered_Odds', 'ipo-MainMarketRenderer_BlankParticipant']})
+                        #Funcion para separar clasificar datos
+                        lista, c_ok, c_fail = [], 0, 0
+                        try:
+                            lista, c_ok, c_fail = Split_Baloncesto.splitbaloncesto(datos)
+                            db.loop_direct_bas(lista)
+                            print("BASKETBALL - Success: {}, FAILED: {}".format(c_ok, c_fail))
+                        except Exception as e:
+                            print("ERROR - BASKETBALL - " + str(e))
+                            break
+                    except:
+                        baloncesto = False
                     browser.switch_to_window(browser.window_handles[0])
                 else:
                     print("BASKETBALL: OFFLINE")
 
                 if(tenis):
                     browser.switch_to_window("tenis")
-                    div = browser.find_element_by_xpath("//div[contains(text(),'Tenis')]").get_attribute('outerHTML')
-                    if(div.find('style=""') == -1):
-                        print("TAB SWITCHING ERROR - TENNIS")
-                        break
-                    tenis = browser.page_source
-                    tenis = BeautifulSoup(tenis, "html.parser")
-                    datos = []
-                    datos=tenis.find_all(attrs={'class':["ipo-CompetitionButton_NameLabel", "ipo-TeamStack_TeamWrapper", "ipo-SetScore_SetResult", "ipo-TeamPoints_TeamScore", "gl-ParticipantCentered_Odds", "ipo-MainMarketRenderer_BlankParticipant"]})
-                    #Funcion para separar clasificar datos
-                    lista, c_ok, c_fail = [], 0, 0
                     try:
-                        lista, c_ok, c_fail = Split_Tenis.split_tenis(datos)
-                        db.loop_direct_ten(lista)
-                        print("TENNIS - Success: {}, FAILED: {}".format(c_ok, c_fail))
-                    except Exception as e:
-                        print("ERROR - TENNIS - " + str(e))
-                        break
+                        div = browser.find_element_by_xpath("//div[contains(text(),'Tenis')]").get_attribute('outerHTML')
+                        if(div.find('style=""') == -1):
+                            print("TAB SWITCHING ERROR - TENNIS")
+                            break
+                        tenis = browser.page_source
+                        tenis = BeautifulSoup(tenis, "html.parser")
+                        datos = []
+                        datos=tenis.find_all(attrs={'class':["ipo-CompetitionButton_NameLabel", "ipo-TeamStack_TeamWrapper", "ipo-SetScore_SetResult", "ipo-TeamPoints_TeamScore", "gl-ParticipantCentered_Odds", "ipo-MainMarketRenderer_BlankParticipant"]})
+                        #Funcion para separar clasificar datos
+                        lista, c_ok, c_fail = [], 0, 0
+                        try:
+                            lista, c_ok, c_fail = Split_Tenis.split_tenis(datos)
+                            db.loop_direct_ten(lista)
+                            print("TENNIS - Success: {}, FAILED: {}".format(c_ok, c_fail))
+                        except Exception as e:
+                            print("ERROR - TENNIS - " + str(e))
+                            break
+                    except:
+                        tenis = False
                     browser.switch_to_window(browser.window_handles[0])
                 else:
                     print("TENNIS: OFFLINE")
