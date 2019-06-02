@@ -51,5 +51,6 @@
     </div>
   </div>
 </form>
-<button type="button" (click)="showNotification()">CREAR NOTIFICACIÓN</button>
+<button type="button" *ngIf="notifyType" (click)="showNotification()">CREAR NOTIFICACIÓN</button>
+<button type="button" *ngIf="verifyType" (click)="showNotification()">CREAR VERIFICACIÓN</button>
 

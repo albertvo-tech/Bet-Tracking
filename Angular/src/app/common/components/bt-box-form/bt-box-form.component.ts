@@ -78,20 +78,31 @@ export class BtBoxFormComponent implements OnInit {
     return evento;
   }
 
+  cuotaEscogida(){
+    const cuota = this.profileForm.get('cuota').value;
+    return cuota;
+  }
+
   fullName: string = `Notificación`;
   cuotaBD: string = 'Valencia Ganador';
 
   
 
   showSuccess() {
-    let evento = this.mercadoSelected();
-    let resultado = 'Pronóstico FALLADO';
-    if(evento == this.cuotaBD) {
-      resultado = 'Pronóstico ACERTADO'
-    }
-    const texto = this.partidoEscogido() + ', ' + this.partidoEvento() + ', ' + resultado;
+    if(this.verifyType) {
+      let evento = this.mercadoSelected();
+      let resultado = 'Pronóstico FALLADO';
+      if(evento == this.cuotaBD) {
+        resultado = 'Pronóstico ACERTADO'
+      }
+      const texto = this.partidoEscogido() + ', ' + this.partidoEvento() + ', ' + resultado;
+      this.toastr.successToastr('Verificación');
+      this.toastr.infoToastr(texto, 'Verificación completada');
+    } else if(this.notifyType) {
+      const texto = this.partidoEscogido() + ', ' + this.partidoEvento() + ', ' + this.cuotaEscogida();
     this.toastr.successToastr(this.fullName);
-    this.toastr.infoToastr(texto, 'Verificación completada');
+    this.toastr.infoToastr(texto, 'Aviso cuota');
+    }
   }
 
   showNotification(){
